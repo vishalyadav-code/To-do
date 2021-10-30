@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Mate+SC&family=Stint+Ultra+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+/* .main::before{
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    position: absolute;
+    filter: blur(10px);
+} */
+
+
+.main{
+    width: 30%;
+    height: 85%;
+    border: 1px solid rgb(190, 210, 218);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgba(31,24,24,0.7);
+  }
+
+.btnList{
+    width: 72%; 
+    display: flex;
+    /* border: 1px solid blue; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemList{
+    margin-top: 1.4rem;
+    width: 72%;
+    height: 70%;
+    /* border: 1px solid chartreuse; */
+    overflow-x: auto;
+}
+
+.itemList::-webkit-scrollbar{
+    display: none;
+}
+
+.itemList .items{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+    margin-bottom: 0.9rem;
+    /* height: 100%; */
+    background-color: rgb(214, 186, 149);
+    border-radius: 5px;
+    border: 1px solid darkgray;
+
+}
+
+.itemList .items .text{
+    
+    overflow-y: auto;
+    font-size: 2rem;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: 'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:1.5px;
+    margin-left: 5px;
+}
+
+.text::-webkit-scrollbar{
+    display: none;
+}
+
+.itemList .items .editDelete{
+    margin-right: .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 17%;
+}
+
+.itemList .items .editDelete .fa-pen{
+    font-size: 2rem;
+    color: darkolivegreen;
+    transition: 0.2s ease;
+}
+
+.itemList .items .editDelete .fa-minus-square{
+    font-size: 2rem;
+    color: darkolivegreen;
+    margin-left:5px;
+}
+
+.itemList .items .editDelete .fa-pen:hover,.itemList .items .editDelete .fa-minus-square:hover{
+    color: brown;
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
+.crossed-line{
+    text-decoration:line-through;
+}
+
+.show-pen{
+    display:none;
+}
+
+h1{
+    margin:4rem 0 0.5rem 0;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 4.5rem;
+    color:skyblue;
+    filter: drop-shadow(0px 0px 2px whitesmoke);
+    letter-spacing:3.5px;
+}
+
+/* Editor section */
+
+.editor{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+    background-color:rgba(0,0,0,0.7);
+    z-index: 2;
+    
+        /* transition: 1s ease; */
+}
+
+
+.child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 16%;
+    width:35%
+}
+.can-edit{
+    border-radius: 5px;
+    font-size: 2rem;
+    box-shadow: 6px 6px 12px rgba(230, 117, 12, 0.5);
+    outline:none;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid #555;
+    width:70%
+}
+
+.can-edit:focus {
+  background-color: lightblue;
+}
+
+.btn2{
+    width: 20%;
+    border-radius: 10px;
+    outline:none;
+    border-style: none;
+    border: 1px solid peru;
+    font-size: 2rem;
+    margin-top:10px;
+    font-weight: 600;
+    padding:5px;
+    font-family: 'Mate SC', serif;
+    box-shadow: 2px 2px 5px rgb(255,255,255,0.5);
+}
+.btn2:hover{
+    background: #cdcfb1;
+}
+.btn2:active{
+    transform: translateY(1px);
+}
+
+
+/* media query for resposiveness */
+
+@media screen and (max-width:1200px){
+    .main{
+        width:45%;
+    }
+}
+@media screen and (max-width:998px){
+    .main{
+        width:50%;
+    }
+    .editor .child{
+        width:45%;
+    }
+}
+@media screen and (max-width:768px){
+    .main{
+        width:60%;
+    }
+    .editor .child{
+        width:50%;
+    }
+}
+@media screen and (max-width:650px){
+    .main{
+        width:65%;
+        height:80%;
+    }
+    .editor .child{
+        width:55%;
+    }
+}
+@media screen and (max-width:535px){
+    .main{
+        width:70%;
+    }
+    .itemList , .btnList{
+        width:75%
+    }
+     .editor .child{
+        width:65%;
+    }
+}
+
+@media screen and (max-width:468px){
+    .main{
+        width:80%;
+    }
+      .editor .child{
+        width:78%;
+    }
+}
+@media screen and (max-width:375px){
+    .main{
+        width:85%;
+    }
+     .itemList , .btnList{
+        width:80%
+    }
+      .editor .child{
+        width:85%;
+    }
+
+}
+@media screen and (max-width:300px){
+    .main{
+        width:90%;
+    }
+     .itemList , .btnList{
+        width:85%;
+    }
+    html{
+        font-size:9px;
+    }
+
+}
+
+@media screen and (max-width:275px){
+    .main{
+        width:95%;
+    }
+     .itemList , .btnList{
+        width:90%;
+        flex-direction:column;
+    }
+     html{
+        font-size:8px;
+    }
+     .btnList{
+        width:95%
+    }
+
+}
+@media screen and (max-width:250px){
+    
+     html{
+        font-size:6px;
+    }
+     .btnList{
+        width:95%
+    }
+
+}
